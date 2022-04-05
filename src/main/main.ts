@@ -14,6 +14,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../constants';
 
 export default class AppUpdater {
   constructor() {
@@ -71,8 +72,8 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: WINDOW_WIDTH,
+    height: WINDOW_HEIGHT,
     icon: getAssetPath('icon.png'),
     webPreferences: {
       preload: app.isPackaged

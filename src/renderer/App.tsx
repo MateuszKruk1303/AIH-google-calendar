@@ -1,40 +1,20 @@
+import { CALENDAR_WIDTH, CALENDAR_HEIGHT } from '../constants';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
 
-const Hello = () => {
+const Callendar = () => {
+  const HOUR_IN_SECONDS = 600;
+
+  setTimeout(() => {
+    window.location.reload();
+  }, HOUR_IN_SECONDS * 100);
+
   return (
     <div>
-      <div className="Hello">
-        <img width="200px" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
+      <iframe
+        src='https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FWarsaw&title=AIH&showTz=0&showCalendars=0&showTabs=1&showPrint=0&showDate=0&showNav=0&showTitle=0&mode=WEEK&src=NTFmNmZxOTdyaHFvMDRpY3Azb292dmY2bmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23B39DDB" style="border:solid 1px #777'
+        width={CALENDAR_WIDTH}
+        height={CALENDAR_HEIGHT}
+      ></iframe>
     </div>
   );
 };
@@ -43,7 +23,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Hello />} />
+        <Route path="/" element={<Callendar />} />
       </Routes>
     </Router>
   );
